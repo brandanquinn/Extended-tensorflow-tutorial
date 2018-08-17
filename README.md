@@ -38,7 +38,7 @@ See above
 See above
 ### To run
 1. Confirm a working tensorflow environment.
-2. 2. Then, you simply need to run in your console:
+2. Then, you simply need to run in your console:
 ```
 python text-classification.py
 ```
