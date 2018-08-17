@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 print(tf.__version__)
 
 # Load built-in image dataset.
+# To use a different dataset of images, must be sliced in a similar format here.
 fashion_mnist = keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 

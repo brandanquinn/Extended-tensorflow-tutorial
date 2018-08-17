@@ -8,6 +8,7 @@ import string
 print(tf.__version__)
 
 # Loading built-in IMDB review dataset
+# To use a different dataset of text, must be sliced in a similar format here.
 imdb = keras.datasets.imdb
 (train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
 
@@ -98,6 +99,7 @@ while True:
     encoded_review = encode_review(my_review)
     encoded_review = (np.expand_dims(encoded_review, 0))
     predictions = model.predict(encoded_review)
+    # predictions is nested within lists by default, so we must pull the relevant data below.
     print('Unrounded prediction for custom review: ', predictions[0][0])
     if int(round(predictions[0][0])) == 1:
         print('Model predicted this to be a positive review.')  
