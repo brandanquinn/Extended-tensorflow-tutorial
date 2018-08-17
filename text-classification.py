@@ -3,6 +3,8 @@ from tensorflow import keras
 
 import numpy as np
 
+import string
+
 print(tf.__version__)
 
 imdb = keras.datasets.imdb
@@ -27,6 +29,9 @@ def decode_review(text):
     return ' '.join([reverse_word_index.get(i, '?') for i in text])
 
 def encode_review(text):
+    text = text.lower()
+    translator = str.maketrans('', '', string.punctuation)
+    text = text.translate(translator)
     myList = []
     for word in text.split():
         if word in word_index:
@@ -76,18 +81,17 @@ history = model.fit(partial_x_train,
 results = model.evaluate(test_data, test_labels)
 
 print(results)
+my_review = ''
 
-my_review = 'This movie was bad I hated every second of it '
-encoded_review = encode_review(my_review.lower())
-print(decode_review(encoded_review))
-encoded_review = (np.expand_dims(encoded_review, 0))
-predictions = model.predict(encoded_review)
-print('Predicted value for custom review: ', int(round(predictions[0][0])))
+while True:
+    my_review = input('Write a movie review (type done when you are finished): ')
+    if my_review.lower() == 'done': break
+    encoded_review = encode_review(my_review)
+    encoded_review = (np.expand_dims(encoded_review, 0))
+    predictions = model.predict(encoded_review)
+    print('Unrounded prediction for custom review: ', predictions[0][0])
+    if int(round(predictions[0][0])) == 1:
+        print('Model predicted this to be a positive review.')  
+    else: 
+        print('Model predicted this to be a negative review.')
 
-review = train_data[0]
-print(decode_review(review))
-review = (np.expand_dims(review, 0))
-
-predictions = model.predict(review)
-print('Predicted value for test_data: ', int(round(predictions[0][0])))
-print('Actual value for test_data: ', train_labels[0])
