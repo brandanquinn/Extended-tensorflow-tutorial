@@ -45,5 +45,5 @@ python text-classification.py
 3. Imdb dataset should be loaded for the first run, and cached for future runs.
 4. Information on dataset / model is printed to console.
 5. Model is trained.
-6. TBA
+6. You now have the option to type a review to have the model evaluate. Type 'done' when you are ready to exit the program.
 
