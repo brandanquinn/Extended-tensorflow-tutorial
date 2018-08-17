@@ -1,5 +1,6 @@
 # Extended-tensorflow-tutorials
-Extension of tutorial found here: https://www.tensorflow.org/tutorials/keras/basic_classification
+Extension of tutorials found here: https://www.tensorflow.org/tutorials/keras/basic_classification
+and here: https://www.tensorflow.org/tutorials/keras/basic_text_classification
 
 # Simple Classification
 ## Steps to run program
