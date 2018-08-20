@@ -16,7 +16,6 @@ fashion_mnist = keras.datasets.fashion_mnist
 # List of classifications
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
-
 # Preprocessing of the data done in order to scale the pixel values into floats within the range of 0 to 1.
 train_images = train_images / 255.0
 test_images = test_images / 255.0
