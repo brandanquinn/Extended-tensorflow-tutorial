@@ -1,8 +1,7 @@
 # Extended-tensorflow-tutorials
-Extension of tutorials found here: https://www.tensorflow.org/tutorials/keras/basic_classification
-and here: https://www.tensorflow.org/tutorials/keras/basic_text_classification
 
 # Simple Classification
+https://www.tensorflow.org/tutorials/keras/basic_classification
 ## Steps to run program
 ### Install tensorflow
 You'll need to install tensorflow on whatever system you are using here: https://www.tensorflow.org/install/
@@ -31,6 +30,7 @@ dataset. Once a correct integer is input, the model predicts its classification 
 the bounds of the numpy array. 
 
 # Text Classification
+https://www.tensorflow.org/tutorials/keras/basic_text_classification
 ## Steps to run program
 ### Install tensorflow
 See above
@@ -48,6 +48,7 @@ python text-classification.py
 6. You now have the option to type a review to have the model evaluate. Type 'done' when you are ready to exit the program.
 
 # Regression
+https://www.tensorflow.org/tutorials/keras/basic_regression
 ## Steps to run program
 ### Install tensorflow
 See above
