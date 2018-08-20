@@ -30,10 +30,11 @@ print(df.head())
 
 mean = train_data.mean(axis=0)
 std = train_data.std(axis=0)
+# Saving copy of original test_data to display in table at the end of run.
+original_test_data = test_data
 train_data = (train_data - mean) / std
 test_data = (test_data - mean) / std
 
-print(train_data[0])  # First training sample, normalized
 
 # Seuquential model with two densely connected hidden layers.
 # Output layer returns single, continuous value.
@@ -112,7 +113,7 @@ test_predictions = model.predict(test_data).flatten()
 column_names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD',
                 'TAX', 'PTRATIO', 'B', 'LSTAT']
 pd.set_option('display.max_columns', 50)
-df = pd.DataFrame(test_data, columns=column_names)
+df = pd.DataFrame(original_test_data, columns=column_names)
 
 priceList = []
 for i in range(len(df.index)):

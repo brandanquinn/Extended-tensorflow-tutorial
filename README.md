@@ -47,3 +47,37 @@ python text-classification.py
 5. Model is trained.
 6. You now have the option to type a review to have the model evaluate. Type 'done' when you are ready to exit the program.
 
+# Regression
+## Steps to run program
+### Install tensorflow
+See above
+### Personal setup
+See above
+### To run
+1. Confirm a working tensorflow environment.
+2. Then, you simply need to run in your console:
+```
+python regression.py
+```
+3. 1970 Boston housing dataset should be loaded for the first run, and cached for future runs.
+4. Prints pandas table in console that displays some of the training examples.
+5. Model is trained.
+6. Mean absolute error (difference in predicted price from actual price) is printed.
+7. Pandas table is printed to show correlation between test data and predicted price to
+identify the key properties of the dataset.
+
+### Column labels:
+
+- CRIM: Per capita crime rate.
+- ZN: The proportion of residential land zoned for lots over 25,000 square feet.
+- INDUS: The proportion of non-retail business acres per town.
+- CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
+- NOX: Nitric oxides concentration (parts per 10 million).
+- RM: The average number of rooms per dwelling.
+- AGE: The proportion of owner-occupied units built before 1940.
+- DIS: Weighted distances to five Boston employment centers.
+- RAD: Index of accessibility to radial highways.
+- TAX: Full-value property-tax rate per $10,000.
+- PTRATIO: Pupil-teacher ratio by town.
+- B: 1000 * (Bk - 0.63) ** 2 where Bk is the proportion of Black people by town.
+- LSTAT: Percentage lower status of the population.
