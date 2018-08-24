@@ -89,7 +89,6 @@ while True:
     img = (np.expand_dims(img, 0))
 
     predictions = model.predict(img)
-    print('Test image predicted value: ', np.argmax(predictions[0]))
 
     plt.figure()
     plt.imshow(test_images[user_input])
