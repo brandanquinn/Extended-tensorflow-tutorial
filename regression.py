@@ -109,16 +109,5 @@ print("\nTesting set Mean Abs Error: ${:7.2f}".format(mae * 1000))
 
 test_predictions = model.predict(test_data).flatten()
 
+# Live coding done below:
 
-column_names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD',
-                'TAX', 'PTRATIO', 'B', 'LSTAT']
-pd.set_option('display.max_columns', 50)
-df = pd.DataFrame(original_test_data, columns=column_names)
-
-priceList = []
-for i in range(len(df.index)):
-    priceList.append(test_predictions.item(i))
-
-df['ESTPRICE'] = priceList
-
-print(df.head())

@@ -92,17 +92,4 @@ history = model.fit(partial_x_train,
 results = model.evaluate(test_data, test_labels)
 print(results)
 
-# Hold program with trained model in order to type custom reviews and use the model to predict whether they are positive or negative.
-while True:
-    my_review = input('Write a movie review (type done when you are finished): ')
-    if my_review.lower() == 'done': break
-    encoded_review = encode_review(my_review)
-    encoded_review = (np.expand_dims(encoded_review, 0))
-    predictions = model.predict(encoded_review)
-    # predictions is nested within lists by default, so we must pull the relevant data below.
-    print('Unrounded prediction for custom review: ', predictions[0][0])
-    if int(round(predictions[0][0])) == 1:
-        print('Model predicted this to be a positive review.')  
-    else: 
-        print('Model predicted this to be a negative review.')
-
+# Live coding done below:

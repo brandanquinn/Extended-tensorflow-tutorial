@@ -74,31 +74,4 @@ for i in range(25):
                                   color=color)
 plt.show()
 
-# continuously test input in trained model
-# have user input number, run that number test_image through model
-# get prediction, display image
-
-user_input = 0
-
-while True:
-    user_input = int(input('Enter a number between 0 and 10000: '))
-    if user_input < 0 or user_input >= 10000: 
-        print('Input out of bounds.')
-        break
-    img = test_images[user_input]
-    img = (np.expand_dims(img, 0))
-
-    predictions = model.predict(img)
-
-    plt.figure()
-    plt.imshow(test_images[user_input])
-    predicted_label = np.argmax(predictions[0])
-    true_label = test_labels[user_input]
-    if predicted_label == true_label:
-        color = 'green'
-    else:
-        color = 'red'
-    plt.xlabel("{} ({})".format(class_names[predicted_label], 
-                                  class_names[true_label]),
-                                  color=color)
-    plt.show()
+# Live coding done below:
