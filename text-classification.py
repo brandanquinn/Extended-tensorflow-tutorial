@@ -29,6 +29,8 @@ reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 def decode_review(text):
     return ' '.join([reverse_word_index.get(i, '?') for i in text])
 
+# Define encode_review below:
+
 train_data = keras.preprocessing.sequence.pad_sequences(train_data,
                                                         value=word_index["<PAD>"],
                                                         padding='post',
