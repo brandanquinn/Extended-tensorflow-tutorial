@@ -78,8 +78,6 @@ plt.show()
 # have user input number, run that number test_image through model
 # get prediction, display image
 
-user_input = 0
-
 while True:
     user_input = int(input('Enter a number between 0 and 10000: '))
     if user_input < 0 or user_input >= 10000: 
