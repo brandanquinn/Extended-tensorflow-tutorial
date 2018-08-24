@@ -29,21 +29,6 @@ reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 def decode_review(text):
     return ' '.join([reverse_word_index.get(i, '?') for i in text])
 
-# Because I wanted to have the option to process custom reviews, I needed to develop 
-# function to encode the review based on the pre-existing data. This is done by converting all words to lowercase, removing
-# punctuation and then mapping each cleaned word through provided dictionary(python map) to get integer value.
-def encode_review(text):
-    text = text.lower()
-    translator = str.maketrans('', '', string.punctuation)
-    text = text.translate(translator)
-    myList = []
-    for word in text.split():
-        if word in word_index:
-            myList.append(word_index[word])
-    return myList
-
-# print(decode_review(train_data[0]))
-
 train_data = keras.preprocessing.sequence.pad_sequences(train_data,
                                                         value=word_index["<PAD>"],
                                                         padding='post',
