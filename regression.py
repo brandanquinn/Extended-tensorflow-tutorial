@@ -98,7 +98,7 @@ history = model.fit(train_data, train_labels, epochs=EPOCHS,
                     validation_split=0.2, verbose=0,
                     callbacks=[early_stop, PrintDot()])
 
-# plot_history(history)
+plot_history(history)
 
 # Evaluate the model using the testing data and get the total loss as well as
 # Mean Absolute Error - which is a common regression metric. In this case,
